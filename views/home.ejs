@@ -1,0 +1,88 @@
+<h3>All user data here</h3>
+<table>
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Name</th>
+      <th>Age</th>
+      <th>Email</th>
+      <th>City</th>
+      <th>Contact</th>
+      <th>Action</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% data.forEach((d,ind)=>{ %>
+    <tr key="{ind}">
+      <td><%= ind%></td>
+      <td><%= d.name%></td>
+      <td><%= d.age%></td>
+      <td><%= d.email%></td>
+      <td><%= d.city%></td>
+      <td><%= d.contact%></td>
+      <td>
+        <a href="/delete/<%= ind %>">delete</a>
+        <a href="/update/<%= ind %>">Update</a>
+      </td>
+    </tr>
+
+    <% }) %>
+  </tbody>
+</table>
+
+<br />
+<h3>Register here</h3>
+
+<div>
+  <form method="post" class="m-3" action="/submit_data">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Your Name</label>
+      <input
+        type="text"
+        class="form-control"
+        name="name"
+        id="exampleInputEmail1"
+        aria-describedby="emailHelp"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"
+        >Email Address</label
+      >
+      <input
+        type="email"
+        class="form-control"
+        name="email"
+        id="exampleInputPassword1"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Age</label>
+      <input
+        type="number"
+        class="form-control"
+        name="age"
+        id="exampleInputPassword1"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">City</label>
+      <input
+        type="text"
+        class="form-control"
+        name="city"
+        id="exampleInputPassword1"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Contact</label>
+      <input
+        type="number"
+        class="form-control"
+        name="contact"
+        id="exampleInputPassword1"
+      />
+    </div>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
